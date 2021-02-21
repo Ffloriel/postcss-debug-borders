@@ -1,1 +1,3 @@
-export function f() {}
+export function f(): boolean {
+  return true;
+}

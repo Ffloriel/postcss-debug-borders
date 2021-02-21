@@ -1,7 +1,7 @@
-import { f } from '../src/index'
+import { f } from "../src/index";
 
-describe('f', () => {
-    it('test', () => {
-        expect(f()).toBe(undefined)
-    })
-})
+describe("f", () => {
+  it("test", () => {
+    expect(f()).toBe(undefined);
+  });
+});
