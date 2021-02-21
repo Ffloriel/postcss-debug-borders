@@ -2,7 +2,9 @@
   "name": "postcss-debug-borders",
   "version": "1.0.0",
   "description": "",
-  "keywords": ["postcss"],
+  "keywords": [
+    "postcss"
+  ],
   "main": "lib/postcss-debug-borders.js",
   "module": "./lib/postcss-debug-borders.esm.js",
   "types": "./lib/postcss-debug-borders.d.ts",
@@ -32,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/Ffloriel/postcss-debug-borders/issues"
   },
-  "homepage": "https://github.com/Ffloriel/postcss-debug-borders#readme"
+  "homepage": "https://github.com/Ffloriel/postcss-debug-borders#readme",
+  "devDependencies": {
+    "typescript": "^4.1.5"
+  }
 }
