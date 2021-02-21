@@ -21,9 +21,9 @@
     "docs:dev": "echo \"Error: no docs:dev script\" && exit 1",
     "docs:build": "echo \"Error: no docs:build script\" && exit 1",
     "docs:deploy": "echo \"Error: no docs:deploy script\" && exit 1",
-    "lint": "echo \"Error: no lint script\" && exit 1",
-    "format": "echo \"Error: no format script\" && exit 1'",
-    "generate-changelog": "echo \"Error: no generate-changelog script\" && exit 1"
+    "lint": "eslint . --ext .ts --ignore-path .gitignore --fix",
+    "format": "prettier --write --parser typescript '**/*.ts'",
+    "generate-changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
   },
   "repository": {
     "type": "git",
@@ -36,6 +36,26 @@
   },
   "homepage": "https://github.com/Ffloriel/postcss-debug-borders#readme",
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.15.1",
+    "@typescript-eslint/parser": "^4.15.1",
+    "conventional-changelog-cli": "^2.1.1",
+    "eslint": "^7.20.0",
+    "husky": "^5.0.9",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "ts-node scripts/verify-commit.ts"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run prettier",
+      "git add"
+    ]
   }
 }
