@@ -1,4 +1,4 @@
-import typescript from "@wessberg/rollup-plugin-ts";
+import typescript from "rollup-plugin-ts";
 import { terser } from "rollup-plugin-terser";
 
 export default {
@@ -8,10 +8,12 @@ export default {
     {
       file: "./lib/postcss-debug-borders.esm.js",
       format: "esm",
+      exports: "auto"
     },
     {
       file: "./lib/postcss-debug-borders.js",
       format: "cjs",
+      exports: "auto"
     },
   ],
 };
