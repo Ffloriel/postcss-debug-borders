@@ -37,7 +37,7 @@ jobs:
       - name: Commit and Push latest version
         run: |
           git add .
-          git commit --allow-empty -m "docs: generate changelog ${{ github.ref }}"
+          git commit --allow-empty -m "docs: generate changelog ${{ github.ref_name }} [skip ci]"
           git push origin main
 
   publish:
