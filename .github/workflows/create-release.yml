@@ -35,6 +35,7 @@ jobs:
 
       - name: Commit and Push latest version
         run: |
+          git checkout main
           git add .
           git commit --allow-empty -m "docs: generate changelog ${{ github.ref }}"
           git push origin main
