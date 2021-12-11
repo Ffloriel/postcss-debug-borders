@@ -51,7 +51,7 @@ jobs:
         git config user.name '${{secrets.MAINTAINER_NAME}}'
         git config user.email '${{secrets.MAINTAINER_EMAIL}}'
     - name: bump version
-      run: npm version ${{ github.event.inputs.version }} -m "%s [skip ci]"
+      run: npm version ${{ github.event.inputs.version }}
 
     - name: Push latest version
       run: git push origin main --follow-tags
