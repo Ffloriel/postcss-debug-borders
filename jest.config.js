@@ -6,4 +6,7 @@ module.exports = {
   moduleFileExtensions: ["ts", "tsx", "js", "json"],
   rootDir: __dirname,
   testMatch: ["<rootDir>/__tests__/**/*test.ts"],
+  globals: {
+    __DEVELOPMENT__: true
+  }
 };
