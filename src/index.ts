@@ -4,6 +4,9 @@ import { UserDefinedOptions } from "./types";
 const PLUGIN_NAME = "postcss-debug-borders";
 
 const debugBorders: postcss.PluginCreator<UserDefinedOptions> = (opts) => {
+  if (__DEVELOPMENT__) {
+    console.log(opts);
+  }
   if (typeof opts === "undefined")
     throw new Error("Debug Borders plugin does not have the correct options");
 
