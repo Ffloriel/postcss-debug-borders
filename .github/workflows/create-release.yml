@@ -15,8 +15,8 @@ jobs:
 
       - name: Setup Git
         run: |
-          git config user.name ${MAINTAINER_NAME}
-          git config user.email ${MAINTAINER_EMAIL}
+          git config user.name '${MAINTAINER_NAME}'
+          git config user.email '${MAINTAINER_EMAIL}'
 
       - name: Generate Changelog
         run: |
