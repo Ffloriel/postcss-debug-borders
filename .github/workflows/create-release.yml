@@ -28,8 +28,11 @@ jobs:
         run: |
           npm run generate-changelog
 
-      - name: Push latest version
-        run: git push origin main
+      - name: Commit and Push latest version
+        run: |
+          git add .
+          git commit --allow-empty -m "docs: generate changelog ${{ github.ref }}"
+          git push origin main
 
   publish:
     name: Publish to npm
