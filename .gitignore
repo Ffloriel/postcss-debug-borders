@@ -1,5 +1,6 @@
 # build files
 lib/
+.temp/
 
 # Logs
 logs

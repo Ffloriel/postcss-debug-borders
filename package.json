@@ -18,8 +18,9 @@
   "scripts": {
     "test": "jest",
     "build": "rollup -c",
-    "docs:dev": "echo \"Error: no docs:dev script\" && exit 1",
-    "docs:build": "echo \"Error: no docs:build script\" && exit 1",
+    "docs:clean": "rimraf docs/.vuepress/.temp docs/.vuepress/.cache docs/.vuepress/dist",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "docs:deploy": "echo \"Error: no docs:deploy script\" && exit 1",
     "lint": "eslint . --ext .ts --ignore-path .gitignore --fix",
     "format": "prettier --write --parser typescript '**/*.ts'",
@@ -53,7 +54,8 @@
     "rollup-plugin-ts": "^1.4.0",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1",
-    "typescript": "^4.3.5"
+    "typescript": "^4.3.5",
+    "vuepress": "^2.0.0-beta.27"
   },
   "husky": {
     "hooks": {
