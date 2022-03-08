@@ -1,4 +1,4 @@
-import fs from "fs";
+import * as fs from "fs";
 import postcss from "postcss";
 import debugBorders from "../src/index";
 

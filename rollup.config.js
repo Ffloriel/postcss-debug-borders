@@ -1,5 +1,5 @@
 import replace from "@rollup/plugin-replace";
-import typescript from "rollup-plugin-ts";
+import typescript from "@rollup/plugin-typescript";
 import { terser } from "rollup-plugin-terser";
 
 function getConfig(isDevelopment) {
@@ -16,12 +16,15 @@ function getConfig(isDevelopment) {
           __DEVELOPMENT__: isDevelopment
         }
       }),
-      typescript(),
+      typescript({
+        tsconfig: "./tsconfig.json",
+        sourceMap: false,
+      }),
       terser(),
     ],
     output: [
       {
-        file: `./lib/${fileName}.esm.js`,
+        file: `./lib/${fileName}.mjs`,
         format: "esm",
         exports: "auto"
       },
