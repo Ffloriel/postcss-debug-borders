@@ -1,8 +1,18 @@
 import * as postcss from "postcss";
 import { UserDefinedOptions } from "./types";
 
+export { UserDefinedOptions };
+
 const PLUGIN_NAME = "postcss-debug-borders";
 
+/**
+ * Create a postCSS plugin that add a colored border to the provided selectors
+ *
+ * @param opts - User defined options
+ * @returns the postCSS plugin
+ *
+ * @public
+ */
 const debugBorders: postcss.PluginCreator<UserDefinedOptions> = (opts) => {
   if (__DEVELOPMENT__) {
     console.log(opts);
