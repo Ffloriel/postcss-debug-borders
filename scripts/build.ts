@@ -9,7 +9,6 @@ import typescript from "@rollup/plugin-typescript";
 import replace from "@rollup/plugin-replace";
 import { terser } from "rollup-plugin-terser";
 import * as path from "path";
-import { promises as asyncFs } from "fs";
 
 const rollupBaseConfig: RollupOptions = {
   input: "./src/index.ts",
@@ -17,6 +16,7 @@ const rollupBaseConfig: RollupOptions = {
     typescript({
       tsconfig: "./tsconfig.json",
       sourceMap: false,
+      outputToFilesystem: true,
     }),
     terser(),
   ],
@@ -76,7 +76,8 @@ const extractorAPIBaseConfig: IExtractorConfigPrepareOptions = {
     compiler: {
       tsconfigFilePath: "tsconfig.json",
     },
-    mainEntryPointFilePath: "<projectFolder>/lib/.temp/src/index.d.ts",
+    mainEntryPointFilePath:
+      "<projectFolder>/lib/.temp/packages/<unscopedPackageName>/src/index.d.ts",
     apiReport: {
       enabled: false,
       reportFileName: "<unscopedPackageName>.api.md",
@@ -128,22 +129,3 @@ export async function extractAPI(packageFolder: string): Promise<void> {
   });
   await Extractor.invoke(extractorAPIConfig);
 }
-
-(async () => {
-  await asyncFs.rm(path.resolve(__dirname, "../lib"), {
-    recursive: true,
-    force: true,
-  });
-
-  for (const isDevelopment of [false, true]) {
-    await buildRollup(
-      createRollupConfig("postcss-debug-borders", [], isDevelopment)
-    );
-  }
-
-  await extractAPI(path.resolve(__dirname, "../"));
-  await asyncFs.rm(path.resolve(__dirname, "../lib", ".temp"), {
-    recursive: true,
-    force: true,
-  });
-})();

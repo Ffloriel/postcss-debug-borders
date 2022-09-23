@@ -1,0 +1,42 @@
+{
+  "name": "debug-borders",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/debug-borders.js",
+  "module": "./lib/debug-borders.mjs",
+  "types": "./lib/debug-borders.d.ts",
+  "exports": {
+    ".": {
+      "require": "./lib/debug-borders.js",
+      "import": "./lib/debug-borders.mjs",
+      "types": "./lib/debug-borders.d.ts"
+    },
+    "./development": {
+      "require": "./lib/debug-borders.development.js",
+      "import": "./lib/debug-borders.development.mjs",
+      "types": "./lib/debug-borders.d.ts"
+    }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {},
+  "scripts": {
+    "build": "ts-node build.ts",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ffloriel/postcss-debug-borders.git"
+  },
+  "author": "Ffloriel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ffloriel/postcss-debug-borders/issues"
+  },
+  "homepage": "https://github.com/Ffloriel/postcss-debug-borders#readme"
+}

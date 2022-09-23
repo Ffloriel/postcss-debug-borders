@@ -9,11 +9,10 @@
     "sourceMap": true,
     "removeComments": false,
     "strict": true,
-    "baseUrl": "./",
-    "esModuleInterop": false,
-    "forceConsistentCasingInFileNames": true,
-    "outDir": "./lib",
-    "declarationDir": ".temp/"
+    "rootDir": ".",
+    "esModuleInterop": true,
+    "composite": true,
+    "forceConsistentCasingInFileNames": true
   },
   "ts-node": {
     "compilerOptions": {

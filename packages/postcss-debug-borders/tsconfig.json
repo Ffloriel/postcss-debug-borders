@@ -1,0 +1,15 @@
+{
+  "extends": "./../../tsconfig.json",
+  "compilerOptions": {
+      "declaration": true,
+      "outDir": "./lib",
+      "declarationDir": ".temp/",
+      "baseUrl": ".",
+      "paths": {},
+      // "typeRoots": [
+      //   "../../node_modules/@types"
+      // ]
+  },
+  "include": ["src", "package.json", "__tests__"],
+  "exclude": ["lib"]
+}

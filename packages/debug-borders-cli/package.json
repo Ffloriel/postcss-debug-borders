@@ -1,0 +1,27 @@
+{
+  "name": "debug-borders-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/debug-borders-cli.js",
+  "bin": "./lib/debug-borders-cli.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "ts-node build.ts",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ffloriel/postcss-debug-borders.git"
+  },
+  "author": "Ffloriel",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ffloriel/postcss-debug-borders/issues"
+  },
+  "homepage": "https://github.com/Ffloriel/postcss-debug-borders#readme",
+  "dependencies": {
+    "commander": "^9.2.0"
+  }
+}

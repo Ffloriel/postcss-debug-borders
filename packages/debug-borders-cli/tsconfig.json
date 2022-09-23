@@ -1,0 +1,16 @@
+{
+  "extends": "./../../tsconfig.json",
+  "compilerOptions": {
+      "declaration": true,
+      "outDir": "./lib",
+      "declarationDir": ".temp/",
+      "baseUrl": ".",
+      "resolveJsonModule": true,
+      "paths": {}
+  },
+  "include": ["src", "package.json", "__tests__"],
+  "exclude": ["lib"],
+  "references": [
+    { "path": "../postcss-debug-borders" }
+  ]
+}
