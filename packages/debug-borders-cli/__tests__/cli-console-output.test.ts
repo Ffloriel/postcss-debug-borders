@@ -16,7 +16,13 @@ describe("Debug Borders CLI console output", () => {
     ]);
     await run(program);
     expect(console.log).toHaveBeenCalledWith(
-      `[{"css":".hello {\\n  color: red;\\n}\\n","file":"${CLI_TEST_FOLDER}/src/style.css"}]`
+      `a {
+  color: blue;
+}
+* {
+  border: 1px solid red;
+}
+`
     );
     console.log = originalConsoleLog;
   });

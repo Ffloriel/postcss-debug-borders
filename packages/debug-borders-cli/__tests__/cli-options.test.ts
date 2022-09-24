@@ -3,7 +3,7 @@ import { Command } from "commander";
 import { parseCommandOptions, getOptions, Options } from "../src/";
 import { CLI_TEST_FOLDER } from "./utils";
 
-describe("PurgeCSS CLI options", () => {
+describe("Debug Borders CLI options", () => {
   const program = parseCommandOptions(new Command());
 
   it("should set the options correctly", async () => {
@@ -24,10 +24,12 @@ describe("PurgeCSS CLI options", () => {
 
     const options = await getOptions(program);
     const expectedOptions: Options = {
-      input: "./fixtures/input-cli-options.css",
-      output: "./fixtures/output-cli-options.css",
+      input: `${CLI_TEST_FOLDER}input-cli-options.css`,
+      output: `${CLI_TEST_FOLDER}output-cli-options.css`,
       selectors: ["a", "li", "p"],
-      borderStyle: "2px solid blue",
+      borderStyle: {
+        border: "2px solid blue",
+      },
     };
     expect(options).toEqual(expectedOptions);
   });

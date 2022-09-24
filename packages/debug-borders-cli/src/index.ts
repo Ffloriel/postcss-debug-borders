@@ -23,7 +23,7 @@ type CommandOptions = {
 export type Options = {
   input: string;
   output?: string;
-  borderStyle: string;
+  borderStyle: CSS.Properties;
   selectors: string[];
 };
 
@@ -61,7 +61,9 @@ export async function getOptions(program: Command): Promise<Options> {
   const options = {
     input,
     output,
-    borderStyle: borderStyle || "1px solid red",
+    borderStyle: {
+      border: borderStyle || "1px solid red",
+    },
     selectors: selectors || ["*"],
   };
 
